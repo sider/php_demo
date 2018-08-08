@@ -1,8 +1,8 @@
 linter:
   rubocop:
-    root_dir: 'sideci_demo'
+    root_dir: 'sider_demo'
 
   phpmd:
-    root_dir: 'sideci_demo'
+    root_dir: 'sider_demo'
     options:
       rule: 'phpmd.xml'
