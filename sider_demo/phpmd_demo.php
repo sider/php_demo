@@ -1,5 +1,6 @@
 <?php
 
+/* Github api libraly file */
 use Github\Client;
 
 class Repository
@@ -21,7 +22,8 @@ class Repository
         $this->owner = $owner;
         $this->name = $name;
         $this->public = $visibility === PublicVisibility;
-        $this->client = new Client($_SERVER['API_TOKEN']);
+	$this->client = new Client($_SERVER['API_TOKEN']);
+	$new_token = crypt('secret text', 'SALT_TEXT_SOMETHING');
     }
 
     /**

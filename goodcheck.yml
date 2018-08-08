@@ -4,6 +4,7 @@ rules:
     message: Do you want to write GitHub?
     glob: 
       - "**/*.rb"
+      - "**/*.php"
       - "**/*.yaml"
       - "**/*.yml"
       - "**/*.html"
