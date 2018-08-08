@@ -1,0 +1,34 @@
+rules:
+  - id: com.example.1
+    pattern: Github
+    message: Do you want to write GitHub?
+    glob: 
+      - "**/*.rb"
+      - "**/*.yaml"
+      - "**/*.yml"
+      - "**/*.html"
+    fail:
+      - Signup via Github
+    pass:
+      - Signup via GitHub
+  - id: com.example.mysql
+    pattern: mysql_*
+    message: |
+      Do not use mysql_* functions.
+      Please use PDO or Framework's ORM.
+      MySQL Functions (PDO_MYSQL)
+      http://php.net/manual/en/ref.pdo-mysql.php
+    glob:
+      - "**/*.php"
+  - id: com.example.crypt
+    pattern: crypt
+    message: |
+      Do not use crypt.
+      Please use password_hash.
+      Reference: https://secure.php.net/manual/function.password-hash.php
+    glob:
+      - "**/*.php"
+    pass:
+      - $password = password_hash('secret text', PASSWORD_DEFAULT);            
+    fail:
+      - $password = crypt('secret text', generate_salt());
